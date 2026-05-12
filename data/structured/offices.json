@@ -54,7 +54,7 @@
       "role": "Head of Department (HOD)",
       "floor": "Second Floor",
       "wing": "Wing B Right",
-      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take your right side."
     },
     {
       "code": "CO-C32",
@@ -63,7 +63,7 @@
       "role": "Secretary to Head of Department",
       "floor": "Second Floor",
       "wing": "Wing B Right",
-      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take your right side."
     },
     {
       "code": "CO-C33",
@@ -72,7 +72,7 @@
       "role": "Professor",
       "floor": "Second Floor",
       "wing": "Wing B Right",
-      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take your right side."
     },
     {
       "code": "CO-C01",
@@ -81,7 +81,7 @@
       "role": "Head of Department",
       "floor": "Second Floor",
       "wing": null,
-      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+      "full_location": "Second Floor. Climb the stairs to the Second Floor. wyou are facing wing B, take your right hand side section of wing B and walk straight."
     },
     {
       "code": "CO-C02",
@@ -98,8 +98,8 @@
       "category": "Staff Office",
       "role": "Professor",
       "floor": "Second Floor",
-      "wing": null,
-      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+      "wing": "Wing B left",
+      "full_location": "Second Floor. Climb the stairs to the Second Floor, wing B is directly opposite you, take the left section of wing B."
     },
     {
       "code": "CO-C05",
@@ -258,7 +258,7 @@
       "role": "Undergraduate Exam Office",
       "floor": "Second Floor",
       "wing": null,
-      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+      "full_location": "Second Floor. Climb the stairs to the Second Floor, wing A is behind you, facing wing A take your left."
     },
     {
       "code": "CO-C28",
@@ -267,7 +267,7 @@
       "role": "Postgraduate Exam Office",
       "floor": "Second Floor",
       "wing": null,
-      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+      "full_location": "Second Floor. Climb the stairs to the Second Floor, wing A is behind you, facing wing A take your left."
     }
   ]
 }
