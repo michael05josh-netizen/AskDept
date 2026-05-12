@@ -1,0 +1,63 @@
+{
+  "level": "200",
+  "semester": "first",
+  "total_credit_units": 17,
+  "courses": [
+    {
+      "code": "EEEN201",
+      "title": "Electric Field and Circuit Theory",
+      "unit": 2,
+      "prerequisite": "PHYS122",
+      "status": "Core"
+    },
+    {
+      "code": "EEEN203",
+      "title": "Machines, Power and Installations",
+      "unit": 2,
+      "prerequisite": "PHYS122",
+      "status": "Core"
+    },
+    {
+      "code": "CVEN201",
+      "title": "Civil Engineering Theory of Structures",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MEEN201",
+      "title": "Engineering Graphics",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MMEN201",
+      "title": "Material Science",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MATH241",
+      "title": "Calculus I",
+      "unit": 3,
+      "prerequisite": "MATH105",
+      "status": "Core"
+    },
+    {
+      "code": "MATH243",
+      "title": "Algebra I",
+      "unit": 2,
+      "prerequisite": "MATH102",
+      "status": "Core"
+    },
+    {
+      "code": "WREN201",
+      "title": "Fluid Mechanics",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    }
+  ]
+}

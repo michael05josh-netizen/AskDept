@@ -1,0 +1,50 @@
+{
+  "level": "500",
+  "semester": "second",
+  "option": "Control & Intelligent Systems",
+  "total_credit_units": 13,
+  "courses": [
+    {
+      "code": "COEN544",
+      "title": "Cyberpreneurship and Cyberlaw",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN558",
+      "title": "Digital Systems Design",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN552",
+      "title": "Computer Vision",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN554",
+      "title": "Web Programming",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN562",
+      "title": "Engineering Optimization",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "ENGG598",
+      "title": "Final Year Project",
+      "unit": 3,
+      "prerequisite": "-",
+      "status": "Core"
+    }
+  ]
+}

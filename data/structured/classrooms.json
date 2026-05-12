@@ -1,0 +1,415 @@
+{
+  "department": "Computer Engineering Department",
+  "building_navigation_guide": {
+    "entrance": "When you enter the building, Wing A is on your right hand side and Wing B is on your left hand side.",
+    "stairs_upper_floors": "After climbing the stairs to the 1st, 2nd or 3rd floor, Wing A will be behind you and you will be facing Wing B. When facing Wing A, the right side is Wing A Right and the left side is Wing A Left (the wing is partitioned).",
+    "floor_codes": {
+      "A": "Ground Floor",
+      "B": "First Floor",
+      "C": "Second Floor",
+      "D": "Third Floor"
+    }
+  },
+  "rooms": [
+    {
+      "code": "CO-A1",
+      "name": "Control Lab",
+      "category": "Laboratory",
+      "floor": "Ground Floor",
+      "wing": "Wing B Right",
+      "full_location": "Ground Floor, Wing B Right. From the main entrance, Wing B is on your left. Take the right section of Wing B."
+    },
+    {
+      "code": "CO-A6",
+      "name": "MKCL",
+      "category": "Laboratory",
+      "floor": "Ground Floor",
+      "wing": "Wing A Right",
+      "full_location": "Ground Floor, Wing A Right. From the main entrance, Wing A is on your right."
+    },
+    {
+      "code": "CO-A7",
+      "name": "Male Toilets",
+      "category": "Toilet",
+      "floor": "Ground Floor",
+      "wing": "Wing A Left",
+      "full_location": "Ground Floor, Wing A Left. From the main entrance, Wing A is on your right, then take the left partitioned section."
+    },
+    {
+      "code": "CO-A8",
+      "name": "Male Toilets",
+      "category": "Toilet",
+      "floor": "Ground Floor",
+      "wing": "Wing A Left",
+      "full_location": "Ground Floor, Wing A Left. From the main entrance, Wing A is on your right, then take the left partitioned section."
+    },
+    {
+      "code": "CO-A11",
+      "name": "Smart Classroom",
+      "category": "Lecture Room",
+      "floor": "Ground Floor",
+      "wing": "Wing A Left",
+      "full_location": "Ground Floor, Wing A Left. From the main entrance, Wing A is on your right, then take the left partitioned section."
+    },
+    {
+      "code": "CO-A12",
+      "name": "Smart Classroom",
+      "category": "Lecture Room",
+      "floor": "Ground Floor",
+      "wing": "Wing A Left",
+      "full_location": "Ground Floor, Wing A Left. From the main entrance, Wing A is on your right, then take the left partitioned section."
+    },
+    {
+      "code": "CO-A13",
+      "name": "Concept to Product Lab",
+      "category": "Laboratory",
+      "floor": "Ground Floor",
+      "wing": "Wing A Left",
+      "full_location": "Ground Floor, Wing A Left. From the main entrance, Wing A is on your right, then take the left partitioned section."
+    },
+    {
+      "code": "CO-A14",
+      "name": "Power Room",
+      "category": "Utility",
+      "floor": "Ground Floor",
+      "wing": "Wing B Right",
+      "full_location": "Ground Floor, Wing B Right. From the main entrance, Wing B is on your left."
+    },
+    {
+      "code": "CO-A15",
+      "name": "Computer Workshop",
+      "category": "Workshop",
+      "floor": "Ground Floor",
+      "wing": "Wing A Right",
+      "full_location": "Ground Floor, Wing A Right. From the main entrance, Wing A is on your right."
+    },
+    {
+      "code": "CO-A15b",
+      "name": "C2P Tech Hub",
+      "category": "Tech Hub",
+      "floor": "Ground Floor",
+      "wing": "Wing B Left",
+      "full_location": "Ground Floor, Wing B Left. From the main entrance, Wing B is on your left, then take the left section."
+    },
+    {
+      "code": "CO-A16",
+      "name": "Female Toilet",
+      "category": "Toilet",
+      "floor": "Ground Floor",
+      "wing": "Wing B Left",
+      "full_location": "Ground Floor, Wing B Left. From the main entrance, Wing B is on your left."
+    },
+    {
+      "code": "CO-A17",
+      "name": "Female Toilet",
+      "category": "Toilet",
+      "floor": "Ground Floor",
+      "wing": "Wing B Left",
+      "full_location": "Ground Floor, Wing B Left. From the main entrance, Wing B is on your left."
+    },
+    {
+      "code": "CO-B1",
+      "name": "400L Lecture Room",
+      "category": "Lecture Room",
+      "floor": "First Floor",
+      "wing": "Wing B Right",
+      "full_location": "First Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-B2",
+      "name": "PhD Work Room",
+      "category": "Work Room",
+      "floor": "First Floor",
+      "wing": "Wing A Right",
+      "full_location": "First Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-B3",
+      "name": "MSc Work Room",
+      "category": "Work Room",
+      "floor": "First Floor",
+      "wing": "Wing A Right",
+      "full_location": "First Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-B4",
+      "name": "MSc Work Room",
+      "category": "Work Room",
+      "floor": "First Floor",
+      "wing": "Wing A Right",
+      "full_location": "First Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-B5",
+      "name": "300L Lecture Room",
+      "category": "Lecture Room",
+      "floor": "First Floor",
+      "wing": "Wing A Right",
+      "full_location": "First Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-B6",
+      "name": "Male Toilet",
+      "category": "Toilet",
+      "floor": "First Floor",
+      "wing": "Wing B Left",
+      "full_location": "First Floor, Wing B Left. After climbing the stairs, face Wing B and take the left side."
+    },
+    {
+      "code": "CO-B7",
+      "name": "Male Toilet",
+      "category": "Toilet",
+      "floor": "First Floor",
+      "wing": "Wing B Left",
+      "full_location": "First Floor, Wing B Left. After climbing the stairs, face Wing B and take the left side."
+    },
+    {
+      "code": "CO-B8",
+      "name": "Undergraduate Library",
+      "category": "Library",
+      "floor": "First Floor",
+      "wing": "Wing A Left",
+      "full_location": "First Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-B12",
+      "name": "Power Room",
+      "category": "Utility",
+      "floor": "First Floor",
+      "wing": "Wing A Left",
+      "full_location": "First Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-B13",
+      "name": "Intelligent System Lab",
+      "category": "Laboratory",
+      "floor": "First Floor",
+      "wing": "Wing B Left",
+      "full_location": "First Floor, Wing B Left. After climbing the stairs, face Wing B and take the left side."
+    },
+    {
+      "code": "CO-B14",
+      "name": "500L Lecture Room",
+      "category": "Lecture Room",
+      "floor": "First Floor",
+      "wing": "Wing B Left",
+      "full_location": "First Floor, Wing B Left. After climbing the stairs, face Wing B and take the left side."
+    },
+    {
+      "code": "CO-B15",
+      "name": "Female Toilet",
+      "category": "Toilet",
+      "floor": "First Floor",
+      "wing": "Wing A Left",
+      "full_location": "First Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C4",
+      "name": "Coffee Room",
+      "category": "Common Room",
+      "floor": "Second Floor",
+      "wing": "Wing B Left",
+      "full_location": "Second Floor, Wing B Left. After climbing the stairs, face Wing B and take the left side."
+    },
+    {
+      "code": "CO-C5",
+      "name": "Coffee Room",
+      "category": "Common Room",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C15",
+      "name": "Unassigned",
+      "category": "Office",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C16",
+      "name": "Unassigned",
+      "category": "Office",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C17",
+      "name": "P Toilet",
+      "category": "Toilet",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C18",
+      "name": "Male Toilet",
+      "category": "Toilet",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C29",
+      "name": "Seminar Room",
+      "category": "Seminar Room",
+      "floor": "Second Floor",
+      "wing": "Wing B Right",
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-C30",
+      "name": "Power Room",
+      "category": "Utility",
+      "floor": "Second Floor",
+      "wing": "Wing B Right",
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-C34",
+      "name": "Female Toilet",
+      "category": "Toilet",
+      "floor": "Second Floor",
+      "wing": "Wing B Right",
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-C35",
+      "name": "Female Toilet",
+      "category": "Toilet",
+      "floor": "Second Floor",
+      "wing": "Wing B Right",
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-D1",
+      "name": "Network Lab",
+      "category": "Laboratory",
+      "floor": "Third Floor",
+      "wing": "Wing B Right",
+      "full_location": "Third Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-D2",
+      "name": "Network Lab",
+      "category": "Laboratory",
+      "floor": "Third Floor",
+      "wing": "Wing B Right",
+      "full_location": "Third Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-D3",
+      "name": "Exhibition Room",
+      "category": "Exhibition Room",
+      "floor": "Third Floor",
+      "wing": "Wing B Right",
+      "full_location": "Third Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-D4",
+      "name": "MITS Lecture Room",
+      "category": "Lecture Room",
+      "floor": "Third Floor",
+      "wing": "Wing A Right",
+      "full_location": "Third Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-D5",
+      "name": "MITS Lecture Room",
+      "category": "Lecture Room",
+      "floor": "Third Floor",
+      "wing": "Wing A Right",
+      "full_location": "Third Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-D6",
+      "name": "MSc Lecture Room",
+      "category": "Lecture Room",
+      "floor": "Third Floor",
+      "wing": "Wing A Right",
+      "full_location": "Third Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-D7",
+      "name": "Male Staff Toilet",
+      "category": "Toilet",
+      "floor": "Third Floor",
+      "wing": "Wing A Left",
+      "full_location": "Third Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-D8",
+      "name": "Male Toilets",
+      "category": "Toilet",
+      "floor": "Third Floor",
+      "wing": "Wing A Left",
+      "full_location": "Third Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-D9",
+      "name": "Secure Points Academy",
+      "category": "Academy",
+      "floor": "Third Floor",
+      "wing": "Wing A Left",
+      "full_location": "Third Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-D10",
+      "name": "Huawei Academy",
+      "category": "Academy",
+      "floor": "Third Floor",
+      "wing": "Wing A Left",
+      "full_location": "Third Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-D11",
+      "name": "Huawei Academy",
+      "category": "Academy",
+      "floor": "Third Floor",
+      "wing": "Wing A Left",
+      "full_location": "Third Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-D12",
+      "name": "HPC Lab",
+      "category": "Laboratory",
+      "floor": "Third Floor",
+      "wing": "Wing A Left",
+      "full_location": "Third Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-D13",
+      "name": "Power Room",
+      "category": "Utility",
+      "floor": "Third Floor",
+      "wing": "Wing B Left",
+      "full_location": "Third Floor, Wing B Left. After climbing the stairs, face Wing B and take the left side."
+    },
+    {
+      "code": "CO-D14",
+      "name": "PG Library",
+      "category": "Library",
+      "floor": "Third Floor",
+      "wing": "Wing B Left",
+      "full_location": "Third Floor, Wing B Left. After climbing the stairs, face Wing B and take the left side."
+    },
+    {
+      "code": "CO-D15",
+      "name": "Female Toilets",
+      "category": "Toilet",
+      "floor": "Third Floor",
+      "wing": "Wing B Left",
+      "full_location": "Third Floor, Wing B Left. After climbing the stairs, face Wing B and take the left side."
+    },
+    {
+      "code": "CO-D16",
+      "name": "Female Staff Toilet",
+      "category": "Toilet",
+      "floor": "Third Floor",
+      "wing": "Wing B Left",
+      "full_location": "Third Floor, Wing B Left. After climbing the stairs, face Wing B and take the left side."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "level": "100",
+  "semester": "first",
+  "total_credit_units": 19,
+  "courses": [
+    {
+      "code": "CHEM101",
+      "title": "Introductory General Chemistry",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "CHEM121",
+      "title": "Inorganic Chemistry",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "CHEM161",
+      "title": "Chemistry Practical I",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "PHYS111",
+      "title": "Mechanics",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "PHYS131",
+      "title": "Heat and Properties of Matter",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "PHYS161",
+      "title": "Physics Practical I",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MATH101",
+      "title": "Elementary Set Theory",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MATH103",
+      "title": "Trigonometry and Co-ordinate Geometry",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MATH105",
+      "title": "Differential and Integral Calculus",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "GENS101",
+      "title": "Nationalism",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "General"
+    },
+    {
+      "code": "GENS103",
+      "title": "English and Communication Skills",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "General"
+    }
+  ]
+}

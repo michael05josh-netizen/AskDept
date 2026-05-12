@@ -1,0 +1,57 @@
+{
+  "level": "500",
+  "semester": "electives",
+  "option": "All",
+  "note": "Students must choose 4 units from these restricted electives.",
+  "courses": [
+    {
+      "code": "COEN571",
+      "title": "Computer Graphics & Animation",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Restricted"
+    },
+    {
+      "code": "COEN572",
+      "title": "Database Systems",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Restricted"
+    },
+    {
+      "code": "COEN573",
+      "title": "Computational Intelligence",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Restricted"
+    },
+    {
+      "code": "COEN574",
+      "title": "Digital Media Technology",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Restricted"
+    },
+    {
+      "code": "COEN575",
+      "title": "ICT Services Design & Installation",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Restricted"
+    },
+    {
+      "code": "COEN577",
+      "title": "Reliability and Maintainability",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Restricted"
+    },
+    {
+      "code": "COEN578",
+      "title": "Engineering Design & Sustainability Studies",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Restricted"
+    }
+  ]
+}

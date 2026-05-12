@@ -1,0 +1,98 @@
+{
+  "level": "100",
+  "semester": "second",
+  "total_credit_units": 19,
+  "courses": [
+    {
+      "code": "CHEM112",
+      "title": "Introductory Physical Chemistry",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "CHEM162",
+      "title": "Chemistry Practical II",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "PHYS122",
+      "title": "Electricity, Magnetism and Modern Physics",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "PHYS124",
+      "title": "Geometrical and Wave Optics",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "PHYS162",
+      "title": "Physics Practical II",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MATH102",
+      "title": "Algebra",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MATH104",
+      "title": "Conic Sections and Applications of Calculus",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MATH106",
+      "title": "Vectors",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "STAT102",
+      "title": "Introductory Statistics",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COSC102",
+      "title": "Programming in Basic",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "ENGG102",
+      "title": "Introduction to Engineering",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "GENS104",
+      "title": "History and Philosophy of Science",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "General"
+    },
+    {
+      "code": "GENS102",
+      "title": "Environmental Health",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Elective"
+    }
+  ]
+}

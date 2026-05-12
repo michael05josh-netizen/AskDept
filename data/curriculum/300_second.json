@@ -1,0 +1,77 @@
+{
+  "level": "300",
+  "semester": "second",
+  "total_credit_units": 19,
+  "courses": [
+    {
+      "code": "EEEN302",
+      "title": "Circuit Theory and Systems II",
+      "unit": 2,
+      "prerequisite": "EEEN201",
+      "status": "Core"
+    },
+    {
+      "code": "EEEN308",
+      "title": "Measurements and Instrumentation",
+      "unit": 2,
+      "prerequisite": "EEEN202",
+      "status": "Core"
+    },
+    {
+      "code": "COEN302",
+      "title": "Microcontrollers and Applications",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN304",
+      "title": "Object-Oriented Programming",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN306",
+      "title": "Network Technology",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN308",
+      "title": "Operating Systems",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN310",
+      "title": "Academic Writing",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN314",
+      "title": "Laboratory Practical and Project II",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN316",
+      "title": "Communication Principles",
+      "unit": 2,
+      "prerequisite": "EEEN202",
+      "status": "Core"
+    },
+    {
+      "code": "COEN318",
+      "title": "Computer Electronics II",
+      "unit": 2,
+      "prerequisite": "EEEN202",
+      "status": "Core"
+    }
+  ]
+}

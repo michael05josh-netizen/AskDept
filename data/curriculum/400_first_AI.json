@@ -1,0 +1,64 @@
+{
+  "level": "400",
+  "semester": "first",
+  "option": "AI",
+  "total_credit_units": 16,
+  "courses": [
+    {
+      "code": "COEN421",
+      "title": "Laboratory Practical and Project III",
+      "unit": 2,
+      "prerequisite": "COEN321",
+      "status": "Core"
+    },
+    {
+      "code": "COEN431",
+      "title": "Agent Technology & Game Theory",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN433",
+      "title": "Artificial Intelligence Fundamentals",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN435",
+      "title": "Machine Learning Fundamentals",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN451",
+      "title": "Digital Image Processing",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN453",
+      "title": "Software Engineering & Applications I",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "ENGG403",
+      "title": "Law for Engineers",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Cognate"
+    },
+    {
+      "code": "MATH443",
+      "title": "Numerical Analysis",
+      "unit": 3,
+      "prerequisite": "-",
+      "status": "Cognate"
+    }
+  ]
+}

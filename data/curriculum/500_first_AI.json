@@ -1,0 +1,50 @@
+{
+  "level": "500",
+  "semester": "first",
+  "option": "AI",
+  "total_credit_units": 13,
+  "courses": [
+    {
+      "code": "COEN541",
+      "title": "Natural Language Processing",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN543",
+      "title": "Deep Learning Fundamentals",
+      "unit": 2,
+      "prerequisite": "COEN435",
+      "status": "Core"
+    },
+    {
+      "code": "COEN545",
+      "title": "Artificial Intelligence Applications",
+      "unit": 2,
+      "prerequisite": "COEN433",
+      "status": "Core"
+    },
+    {
+      "code": "COEN551",
+      "title": "Cloud Computing",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN553",
+      "title": "Emerging Technologies",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "ENGG597",
+      "title": "Final Year Project",
+      "unit": 3,
+      "prerequisite": "-",
+      "status": "Core"
+    }
+  ]
+}

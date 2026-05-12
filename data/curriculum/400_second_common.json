@@ -1,0 +1,16 @@
+{
+  "level": "400",
+  "semester": "second",
+  "option": "All",
+  "total_credit_units": 6,
+  "note": "This semester is common to all options.",
+  "courses": [
+    {
+      "code": "ENGG498",
+      "title": "SIWES (Students Industrial Work Experience Scheme)",
+      "unit": 6,
+      "prerequisite": "-",
+      "status": "Core"
+    }
+  ]
+}

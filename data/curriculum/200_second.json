@@ -1,0 +1,70 @@
+{
+  "level": "200",
+  "semester": "second",
+  "total_credit_units": 19,
+  "courses": [
+    {
+      "code": "EEEN202",
+      "title": "Electronics, Measurement and Transducers",
+      "unit": 2,
+      "prerequisite": "PHYS122",
+      "status": "Core"
+    },
+    {
+      "code": "CHEN202",
+      "title": "Introduction to Management",
+      "unit": 1,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MEEN202",
+      "title": "Engineering Drawing",
+      "unit": 3,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MEEN204",
+      "title": "Strength of Materials",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MEEN206",
+      "title": "Dynamics of Machines",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MEEN208",
+      "title": "Basic Thermodynamics",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "MATH242",
+      "title": "Calculus II",
+      "unit": 2,
+      "prerequisite": "MATH105",
+      "status": "Core"
+    },
+    {
+      "code": "MATH244",
+      "title": "Algebra II",
+      "unit": 3,
+      "prerequisite": "MATH102",
+      "status": "Core"
+    },
+    {
+      "code": "GENS202",
+      "title": "Entrepreneurship and Innovation",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "General"
+    }
+  ]
+}

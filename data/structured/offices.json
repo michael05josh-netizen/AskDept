@@ -1,0 +1,273 @@
+{
+  "department": "Computer Engineering Department",
+  "building_navigation_guide": {
+    "entrance": "When you enter the building, Wing A is on your right hand side and Wing B is on your left hand side.",
+    "stairs_upper_floors": "After climbing the stairs to the 1st, 2nd or 3rd floor, Wing A will be behind you and you will be facing Wing B. When facing Wing A, the right side is Wing A Right and the left side is Wing A Left (the wing is partitioned).",
+    "floor_codes": {
+      "A": "Ground Floor",
+      "B": "First Floor",
+      "C": "Second Floor",
+      "D": "Third Floor"
+    }
+  },
+  "offices": [
+    {
+      "code": "CO-A2",
+      "name": "Security Office",
+      "category": "Administrative Office",
+      "role": "Security Personnel",
+      "floor": "Ground Floor",
+      "wing": "Wing A",
+      "full_location": "Ground Floor, Wing A. As you enter the building, Wing A is on your right hand side."
+    },
+    {
+      "code": "CO-B9",
+      "name": "COESA Office",
+      "category": "Student Affairs Office",
+      "role": "COESA (Computer Engineering Students' Association) Office",
+      "floor": "First Floor",
+      "wing": null,
+      "full_location": "First Floor. Climb the stairs to the First Floor."
+    },
+    {
+      "code": "CO-B10",
+      "name": "Technologist Office",
+      "category": "Administrative Office",
+      "role": "Technologist",
+      "floor": "First Floor",
+      "wing": null,
+      "full_location": "First Floor. Climb the stairs to the First Floor."
+    },
+    {
+      "code": "CO-B11",
+      "name": "Registration Office",
+      "category": "Administrative Office",
+      "role": "Registration Officer",
+      "floor": "First Floor",
+      "wing": null,
+      "full_location": "First Floor. Climb the stairs to the First Floor."
+    },
+    {
+      "code": "CO-C31",
+      "name": "Dr. B. Yahaya",
+      "category": "HOD Office",
+      "role": "Head of Department (HOD)",
+      "floor": "Second Floor",
+      "wing": "Wing B Right",
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-C32",
+      "name": "Secretary to HOD Office",
+      "category": "Administrative Office",
+      "role": "Secretary to Head of Department",
+      "floor": "Second Floor",
+      "wing": "Wing B Right",
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-C33",
+      "name": "Prof. T.H. Sikiru",
+      "category": "Staff Office",
+      "role": "Professor",
+      "floor": "Second Floor",
+      "wing": "Wing B Right",
+      "full_location": "Second Floor, Wing B Right. After climbing the stairs, face Wing B and take the right side."
+    },
+    {
+      "code": "CO-C01",
+      "name": "Dr. B. Yahaya",
+      "category": "HOD Office",
+      "role": "Head of Department",
+      "floor": "Second Floor",
+      "wing": null,
+      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+    },
+    {
+      "code": "CO-C02",
+      "name": "Prof. E.A. Adedokun",
+      "category": "Staff Office",
+      "role": "Professor",
+      "floor": "Second Floor",
+      "wing": null,
+      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+    },
+    {
+      "code": "CO-C03",
+      "name": "Prof. M.B. Mu'azu",
+      "category": "Staff Office",
+      "role": "Professor",
+      "floor": "Second Floor",
+      "wing": null,
+      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+    },
+    {
+      "code": "CO-C05",
+      "name": "C Office Room",
+      "category": "Office",
+      "floor": "Second Floor",
+      "wing": null,
+      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+    },
+    {
+      "code": "CO-C07",
+      "name": "Dr. Z. Haruna",
+      "category": "Staff Office",
+      "role": "Exam Officer",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C08",
+      "name": "Dr. N.S. Usman",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C09",
+      "name": "Adjunct Staff",
+      "category": "Staff Office",
+      "role": "Adjunct Staff",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C10",
+      "name": "Dr. Z.M. Abubakar",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C11",
+      "name": "Dr. R.F. Adebiyi",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C12",
+      "name": "Unassigned",
+      "category": "Office",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C13",
+      "name": "Dr. A.D. Adekale",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C14",
+      "name": "Dr. Y. Ibrahim",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Right",
+      "full_location": "Second Floor, Wing A Right. After climbing the stairs, Wing A is behind you. Face Wing A and take the right section."
+    },
+    {
+      "code": "CO-C19",
+      "name": "Dr. H. Bello Salau",
+      "category": "Staff Office",
+      "role": "Project Coordinator",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C20",
+      "name": "Dr. M.B. Abdulrazaq",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C21",
+      "name": "Dr. A. Ore-Ajayi",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C22",
+      "name": "Dr. B.O. Sadiq",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C23",
+      "name": "Dr. S.M. Yusuf",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C24",
+      "name": "Unassigned",
+      "category": "Office",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C25",
+      "name": "Dr. A. Umar",
+      "category": "Staff Office",
+      "role": "Dr.",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C26",
+      "name": "Adjunct Staff Office",
+      "category": "Staff Office",
+      "role": "Adjunct Staff",
+      "floor": "Second Floor",
+      "wing": "Wing A Left",
+      "full_location": "Second Floor, Wing A Left. After climbing the stairs, Wing A is behind you. Face Wing A and take the left section."
+    },
+    {
+      "code": "CO-C27",
+      "name": "UG Exam Office",
+      "category": "Administrative Office",
+      "role": "Undergraduate Exam Office",
+      "floor": "Second Floor",
+      "wing": null,
+      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+    },
+    {
+      "code": "CO-C28",
+      "name": "PG Exam Office",
+      "category": "Administrative Office",
+      "role": "Postgraduate Exam Office",
+      "floor": "Second Floor",
+      "wing": null,
+      "full_location": "Second Floor. Climb the stairs to the Second Floor."
+    }
+  ]
+}

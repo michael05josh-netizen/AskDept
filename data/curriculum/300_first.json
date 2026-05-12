@@ -1,0 +1,70 @@
+{
+  "level": "300",
+  "semester": "first",
+  "total_credit_units": 19,
+  "courses": [
+    {
+      "code": "EEEN301",
+      "title": "Circuit Theory and Systems I",
+      "unit": 2,
+      "prerequisite": "EEEN201",
+      "status": "Core"
+    },
+    {
+      "code": "COEN303",
+      "title": "Control Engineering I",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN305",
+      "title": "Computer Hardware and Systems Architecture",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN307",
+      "title": "Introduction to Programming",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN311",
+      "title": "Laboratory Practical and Project I",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    },
+    {
+      "code": "COEN309",
+      "title": "Computer Electronics I",
+      "unit": 2,
+      "prerequisite": "EEEN202",
+      "status": "Core"
+    },
+    {
+      "code": "MATH341",
+      "title": "Differential Equations and Transforms",
+      "unit": 3,
+      "prerequisite": "MATH241",
+      "status": "Cognate"
+    },
+    {
+      "code": "STAT343",
+      "title": "Statistics",
+      "unit": 2,
+      "prerequisite": "STAT102",
+      "status": "Cognate"
+    },
+    {
+      "code": "GENS301",
+      "title": "Business Creation and Growth",
+      "unit": 2,
+      "prerequisite": "-",
+      "status": "Core"
+    }
+  ]
+}
