@@ -25,31 +25,40 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 # =====================================================
 st.set_page_config(
     page_title="AskDept",
-    page_icon="🏫",
+    page_icon="",
     layout="centered",
     initial_sidebar_state="collapsed",
 )
 
-# Custom CSS - Optimized for Mobile
+# Improved CSS - Fixed Top Cut-off Issue
 st.markdown("""
 <style>
+    /* Fix top cut-off */
     .block-container {
-        padding-top: 0.8rem;
+        padding-top: 1.2rem !important;
         padding-bottom: 1rem;
     }
+
+    /* Main title styling */
     h1 {
         font-size: 1.85rem !important;
-        margin-bottom: 0.3rem !important;
-        font-weight: 600;
+        margin-top: 0.3rem !important;
+        margin-bottom: 0.4rem !important;
+        font-weight: 700;
+        text-align: center;
     }
+
+    /* Mobile adjustments */
     @media (max-width: 768px) {
         h1 {
             font-size: 1.65rem !important;
+            margin-top: 0.5rem !important;
         }
         .block-container {
-            padding-top: 0.6rem;
+            padding-top: 1rem !important;
         }
     }
+
     .stChatInput {
         padding-bottom: 0.8rem;
     }
@@ -93,6 +102,7 @@ if "splash_shown" not in st.session_state:
         <div class="splash-content">
             <h1>AskDept</h1>
             <p>Computer Engineering Department</p>
+            <p>AI Assistant</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -102,10 +112,10 @@ if "splash_shown" not in st.session_state:
     st.rerun()
 
 # =====================================================
-# HEADER (Clean & Mobile Friendly)
+# HEADER
 # =====================================================
-st.markdown("<h1 style='text-align: center;'>AskDept 🏫</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #555; margin-top: -10px;'>Computer Engineering • ABU Zaria</p>", unsafe_allow_html=True)
+st.markdown("<h1>AskDept 🏫</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #555; margin-top: -8px;'>Computer Engineering • ABU Zaria</p>", unsafe_allow_html=True)
 
 st.markdown("---")
 
@@ -264,7 +274,6 @@ def _pre_extract(raw: str) -> dict:
     import re
     q = raw.lower().strip()
 
-    # Level
     level = None
     level_patterns = [
         (r'\b100\s*[-\s]?l(vl|evel)?\b', "100"),
@@ -285,20 +294,17 @@ def _pre_extract(raw: str) -> dict:
             level = val
             break
 
-    # Semester
     semester = None
     if re.search(r'\bfirst\s+sem(ester)?\b|1st\s+sem(ester)?\b', q):
         semester = "first"
     elif re.search(r'\bsecond\s+sem(ester)?\b|2nd\s+sem(ester)?\b', q):
         semester = "second"
 
-    # Course Code
     course_code = None
     cc_match = re.search(r'\b([A-Za-z]{2,5}\s*\d{3}[A-Za-z]?)\b', raw)
     if cc_match:
         course_code = cc_match.group(1).replace(" ", "").upper()
 
-    # Option
     option = None
     if re.search(r'\b(ai|artificial intelligence)\b', q):
         option = "AI"
@@ -307,7 +313,6 @@ def _pre_extract(raw: str) -> dict:
     elif re.search(r'\b(control|intelligent systems?|robotics)\b', q):
         option = "Control & Intelligent Systems"
 
-    # Greeting
     is_greeting = bool(re.match(
         r'^(hi+|hello+|hey+|good\s+(morning|afternoon|evening)|howdy|sup|what.?s up)[!?,.\s]*$', q
     ))
@@ -323,40 +328,33 @@ def _pre_extract(raw: str) -> dict:
 
 def analyze_query(raw_query: str) -> dict:
     pre = _pre_extract(raw_query)
-
-    if pre["is_greeting"]:
-        return {
-            "intent": "greeting",
-            "level": None, "semester": None, "option": None,
-            "course_code": None, "room_query": None, "person_query": None,
-            "semantic_query": raw_query,
-        }
-
-    # ... (I'll include the full analyze_query in the next part if it's very long)
-    # For now, continuing with the most important part
-
-def analyze_query(raw_query: str) -> dict:
-    pre = _pre_extract(raw_query)
     q_lower = raw_query.lower().strip()
 
-    # ==================== LOCATION DETECTION ====================
-    location_keywords = [
-        "where is", "where are", "location", "classroom", "venue", "room", 
-        "lecture room", "theatre", "lab location", "situated", "found"
-    ]
-    
+    # Location keywords
+    location_keywords = ["where is", "where are", "location", "classroom", "venue", "room", "lecture room", "theatre"]
     is_location_query = any(kw in q_lower for kw in location_keywords)
 
-    # ==================== GREETING ====================
+    # Office keywords
+    office_keywords = ["dr.", "dr ", "prof.", "prof ", "professor", "lecturer", "hod", "office of"]
+    is_office_query = any(kw in q_lower for kw in office_keywords)
+
     if pre["is_greeting"]:
+        return {"intent": "greeting", "level": None, "semester": None, "option": None,
+                "course_code": None, "room_query": None, "person_query": None, "semantic_query": raw_query}
+
+    # Priority Order
+    if is_office_query:
         return {
-            "intent": "greeting",
-            "level": None, "semester": None, "option": None,
-            "course_code": None, "room_query": None, "person_query": None,
+            "intent": "find_office",
+            "level": pre["level"],
+            "semester": pre["semester"],
+            "option": pre.get("option"),
+            "course_code": pre["course_code"],
+            "room_query": None,
+            "person_query": raw_query,
             "semantic_query": raw_query,
         }
 
-    # ==================== HIGH PRIORITY: LEVEL + LOCATION ====================
     if pre["level"] and is_location_query:
         return {
             "intent": "find_room",
@@ -366,10 +364,9 @@ def analyze_query(raw_query: str) -> dict:
             "course_code": None,
             "room_query": f"{pre['level']} level classroom",
             "person_query": None,
-            "semantic_query": f"{pre['level']} level lecture room location",
+            "semantic_query": f"{pre['level']} level lecture room",
         }
 
-    # ==================== SPECIFIC COURSE ====================
     if pre["course_code"]:
         return {
             "intent": "find_course",
@@ -382,7 +379,6 @@ def analyze_query(raw_query: str) -> dict:
             "semantic_query": raw_query,
         }
 
-    # ==================== NORMAL COURSE LIST ====================
     if pre["level"] and not is_location_query:
         return {
             "intent": "list_courses",
@@ -395,30 +391,24 @@ def analyze_query(raw_query: str) -> dict:
             "semantic_query": f"{pre['level']} level courses",
         }
 
-    # ==================== LLM FALLBACK ====================
+    # LLM Fallback
     prompt = f"""Query: "{raw_query}"
-
 Return ONLY valid JSON:
 {{
   "intent": "find_room | find_office | list_courses | find_course | general_info",
-  "room_query": "room or level info or null",
-  "person_query": "person name or null",
-  "semantic_query": "short phrase"
+  "room_query": null,
+  "person_query": null,
+  "semantic_query": "{raw_query}"
 }}"""
 
-    messages = [
-        SystemMessage(content="Return only valid JSON."),
-        HumanMessage(content=prompt),
-    ]
-    
     try:
-        result = llm_sync.invoke(messages)
+        result = llm_sync.invoke([SystemMessage(content="Return only valid JSON."), HumanMessage(content=prompt)])
         raw_text = result.content.strip()
-        if raw_text.startswith("```"): 
+        if raw_text.startswith("```"):
             raw_text = raw_text.split("```")[1].replace("json","").strip()
         llm_out = json.loads(raw_text)
     except:
-        llm_out = {"intent": "find_room", "room_query": raw_query, "person_query": None, "semantic_query": raw_query}
+        llm_out = {"intent": "general_info", "room_query": None, "person_query": None, "semantic_query": raw_query}
 
     return {
         "intent": llm_out.get("intent", "general_info"),
@@ -430,7 +420,6 @@ Return ONLY valid JSON:
         "person_query": llm_out.get("person_query"),
         "semantic_query": llm_out.get("semantic_query", raw_query),
     }
-
 # =====================================================
 # STRUCTURED RETRIEVERS (Fixed)
 # =====================================================
