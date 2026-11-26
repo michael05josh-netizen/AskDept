@@ -1,5 +1,6 @@
 import os
 import json
+import re
 import streamlit as st
 import time
 from dotenv import load_dotenv
@@ -10,6 +11,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import AIMessageChunk
 
 # =====================================================
 # ENV SETUP
@@ -251,19 +253,24 @@ retriever = vector_db.as_retriever(
 # =====================================================
 # LLM SETUP
 # =====================================================
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
 
 llm = ChatGroq(
     groq_api_key=GROQ_API_KEY,
-    model="llama-3.1-8b-instant",
+    model=GROQ_MODEL,
     temperature=0.3,
     streaming=True,
+    max_retries=3,
+    request_timeout=30,
 )
 
 llm_sync = ChatGroq(
     groq_api_key=GROQ_API_KEY,
-    model="llama-3.1-8b-instant",
+    model=GROQ_MODEL,
     temperature=0,
     streaming=False,
+    max_retries=3,
+    request_timeout=30,
 )
 
 # =====================================================
@@ -301,9 +308,11 @@ def _pre_extract(raw: str) -> dict:
         semester = "second"
 
     course_code = None
-    cc_match = re.search(r'\b([A-Za-z]{2,5}\s*\d{3}[A-Za-z]?)\b', raw)
-    if cc_match:
-        course_code = cc_match.group(1).replace(" ", "").upper()
+    for m in re.finditer(r'\b([A-Za-z]{2,5})[\s\-]*(\d{3}[A-Za-z]?)\b', raw):
+        candidate = (m.group(1) + m.group(2)).upper()
+        if get_single_course(candidate):
+            course_code = candidate
+            break
 
     option = None
     if re.search(r'\b(ai|artificial intelligence)\b', q):
@@ -331,12 +340,14 @@ def analyze_query(raw_query: str) -> dict:
     q_lower = raw_query.lower().strip()
 
     # Location keywords
-    location_keywords = ["where is", "where are", "location", "classroom", "venue", "room", "lecture room", "theatre"]
-    is_location_query = any(kw in q_lower for kw in location_keywords)
+    is_location_query = bool(re.search(
+        r'\b(where is|where are|location|classrooms?|venue|rooms?|lecture rooms?|theatre)\b', q_lower
+    ))
 
     # Office keywords
-    office_keywords = ["dr.", "dr ", "prof.", "prof ", "professor", "lecturer", "hod", "office of"]
-    is_office_query = any(kw in q_lower for kw in office_keywords)
+    is_office_query = bool(re.search(
+        r'\b(dr|prof|professor|lecturer|hod|engr)\b|office of', q_lower
+    ))
 
     if pre["is_greeting"]:
         return {"intent": "greeting", "level": None, "semester": None, "option": None,
@@ -454,13 +465,15 @@ def get_electives(level: str = "500") -> list[dict]:
 
 
 def get_single_course(code: str) -> dict | None:
-    code = code.strip().upper()
+    def norm(s):
+        return re.sub(r"[\s\-]", "", str(s)).upper()
+
+    target = norm(code)
     for (lvl, sem, opt), data in curriculum_db.items():
         for course in data.get("courses", []):
-            if course.get("code", "").upper() == code:
+            if norm(course.get("code", "")) == target:
                 return {**course, "level": lvl, "semester": sem, "option": opt}
     return None
-
 
 def search_rooms(query: str) -> list[dict]:
     if not query:
@@ -691,6 +704,29 @@ for msg in st.session_state.chat_history:
 # =====================================================
 # MAIN CHAT LOOP
 # =====================================================
+NOT_FOUND_MARKERS = (
+    "not found",
+    "no courses found",
+    "no office information found",
+    "couldn't find a specific room",
+)
+
+def _is_empty_context(ctx: str) -> bool:
+    c = (ctx or "").strip().lower()
+    return (not c) or any(m in c for m in NOT_FOUND_MARKERS)
+
+from langchain_core.messages import AIMessageChunk
+
+def safe_stream(messages):
+    try:
+        for chunk in llm.stream(messages):
+            yield chunk
+    except Exception as e:
+        print(f"[LLM error] {type(e).__name__}: {e}")
+        yield AIMessageChunk(
+            content="⚠️ I couldn't reach the AI service just now. Please try again in a moment."
+        )
+
 
 question = st.chat_input("🔍 Ask anything about the Computer Engineering Department...")
 
@@ -739,21 +775,21 @@ if question:
         elif intent == "find_office":
             q = person_query or semantic_q
             context = build_office_context(q)
-            # Also check rooms if relevant
             room_ctx = build_room_context(q)
-            if "No rooms found" not in room_ctx:
+            if not _is_empty_context(room_ctx):
                 context += "\n\n" + room_ctx
             strategy = f"structured → offices ('{q}')"
 
-        # Fallback to Vector Search
-        if not context or "not found" in context.lower() or intent in ("general_info", "other"):
+        # Fallback to vector search
+        if _is_empty_context(context) or intent in ("general_info", "other"):
             vector_docs = retriever.invoke(semantic_q)
             vec_context = "\n\n".join(d.page_content for d in vector_docs)
-            if context and "not found" not in context.lower():
+
+            if not _is_empty_context(context):
                 context = context + "\n\n--- Additional information from handbook ---\n\n" + vec_context
             else:
                 context = vec_context
-                strategy = "vector search"
+            strategy = "vector search"
 
         history_text = build_history_text()
 
@@ -781,7 +817,7 @@ Chat History:
         with st.chat_message("assistant"):
             placeholder = st.empty()
             answer_text = ""
-            for chunk in llm.stream(messages):
+            for chunk in safe_stream(messages):
                 if chunk.content:
                     answer_text += chunk.content
                     placeholder.markdown(answer_text)
