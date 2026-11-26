@@ -459,8 +459,10 @@ Return ONLY valid JSON:
 # =====================================================
 
 def get_courses(level: str, semester: str | None, option: str | None = None) -> list[dict]:
-    results = []
     level = str(level).strip()
+
+    # Collect matching curriculum entries
+    matches = []
     for (lvl, sem, opt), data in curriculum_db.items():
         if lvl != level:
             continue
@@ -470,12 +472,35 @@ def get_courses(level: str, semester: str | None, option: str | None = None) -> 
             continue
         if option and opt and str(opt).lower() != str(option).lower():
             continue
+        matches.append((sem, opt, data))
+
+    results = []
+    seen_ids = set()
+    for sem, opt, data in matches:
+        # The same file can be registered under several options: return it once
+        if id(data) in seen_ids:
+            continue
+        seen_ids.add(id(data))
+
+        # Is this data object shared across several keys?
+        sharing = [o for (_l, _s, o), d in curriculum_db.items() if d is data]
+        if len(sharing) > 1:
+            if option:
+                label = next(
+                    (o for o in sharing if o and str(o).lower() == str(option).lower()),
+                    option,
+                )
+            else:
+                label = "Common to all options"
+        else:
+            label = opt
+
         for course in data.get("courses", []):
             results.append({
                 **course,
-                "level":    lvl,
+                "level":    level,
                 "semester": sem,
-                "option":   opt,
+                "option":   label,
                 "total_credit_units": data.get("total_credit_units"),
             })
     return results
@@ -603,7 +628,7 @@ def build_courses_context(level: str, semester: str | None, option: str | None =
         
         for sem in sorted(by_sem.keys()):
             sem_courses = by_sem[sem]
-            total = curriculum_db.get((level, sem, None), {}).get("total_credit_units", "?")
+            total = sem_courses[0].get("total_credit_units", "?")
             lines.append(f"=== {level} Level — {sem.title()} Semester (Total: {total} units) ===")
             lines.append(f"{'Code':<12} {'Title':<45} {'Units':<6} {'Status':<20} {'Prerequisite'}")
             lines.append("-" * 100)
@@ -629,7 +654,7 @@ def build_courses_context(level: str, semester: str | None, option: str | None =
             lines.append("=" * 60)
             for sem in sorted(by_opt_sem[opt].keys()):
                 sem_courses = by_opt_sem[opt][sem]
-                total = curriculum_db.get((level, sem, opt), {}).get("total_credit_units", "?")
+                total = sem_courses[0].get("total_credit_units", "?")
                 lines.append(f"  --- {sem.title()} Semester (Total: {total} units) ---")
                 lines.append(f"  {'Code':<12} {'Title':<45} {'Units':<6} {'Status':<20} {'Prerequisite'}")
                 lines.append("  " + "-" * 96)
@@ -824,6 +849,7 @@ Guidelines:
 - Never make up information. Use only facts that appear in the context.
 - Answer only what was asked. Do not add extra courses, offices, rooms or topics the user did not ask about.
 - If the answer is not in the context, say clearly that you don't have that information, then stop. Do not offer unrelated alternatives from the context. You may suggest one short way to rephrase, or tell them to contact the department office.
+- When the context lists several options, never merge them into a single table without saying which option each course belongs to. Either add an "Option(s)" column or show a separate table per option, and say which courses are common to all options.
 - If the user asks about a specific course code, lecturer or room that does not appear in the context, say it is not in your records. Do not substitute a different one.
 - Use markdown tables for course lists. For single facts (a credit total, an office location) answer in one or two sentences.
 - Keep answers concise and friendly.
