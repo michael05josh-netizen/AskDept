@@ -388,6 +388,17 @@ def analyze_query(raw_query: str) -> dict:
             "person_query": raw_query,
             "semantic_query": raw_query,
         }
+    if is_electives_query(raw_query):
+        return {
+            "intent": "list_electives",
+            "level": "500",
+            "semester": None,
+            "option": pre.get("option"),
+            "course_code": None,
+            "room_query": None,
+            "person_query": None,
+            "semantic_query": raw_query,
+        }
 
     if pre["level"] and is_location_query:
         return {
@@ -510,6 +521,30 @@ def get_electives(level: str = "500") -> list[dict]:
     key = (level, "electives", "All")
     data = curriculum_db.get(key, {})
     return data.get("courses", [])
+
+def build_electives_context(level: str = "500") -> str:
+    data = curriculum_db.get((level, "electives", "All"), {})
+    courses = data.get("courses", [])
+    if not courses:
+        return f"No elective courses found for {level} level."
+
+    lines = [f"=== {level} Level — Restricted Electives ==="]
+    note = data.get("note")
+    if note:
+        lines.append(f"NOTE: {note}")
+    lines.append("")
+    lines.append(f"{'Code':<12} {'Title':<45} {'Units':<6} {'Status':<14} {'Prerequisite'}")
+    lines.append("-" * 95)
+    for c in courses:
+        lines.append(
+            f"{c.get('code',''):<12} {c.get('title',''):<45} "
+            f"{c.get('unit',''):<6} {c.get('status',''):<14} {c.get('prerequisite','-')}"
+        )
+    return "\n".join(lines)
+
+
+def is_electives_query(text: str) -> bool:
+    return bool(re.search(r"\belectives?\b", text.lower()))
 
 
 def get_single_course(code: str) -> dict | None:
@@ -820,6 +855,10 @@ if question:
             context = build_room_context(q)
             strategy = f"structured → rooms ('{q}')"
 
+        elif intent == "list_electives":
+            context = build_electives_context("500")
+            strategy = "structured → electives"
+
         elif intent == "find_office":
             q = person_query or semantic_q
             context = build_office_context(q)
@@ -851,6 +890,7 @@ Guidelines:
 - If the answer is not in the context, say clearly that you don't have that information, then stop. Do not offer unrelated alternatives from the context. You may suggest one short way to rephrase, or tell them to contact the department office.
 - When the context lists several options, never merge them into a single table without saying which option each course belongs to. Either add an "Option(s)" column or show a separate table per option, and say which courses are common to all options.
 - If the user asks about a specific course code, lecturer or room that does not appear in the context, say it is not in your records. Do not substitute a different one.
+- For yes/no questions, begin with the exact distinction the data supports. For electives: no single elective is compulsory, but students must take the required number of units from the list.
 - Use markdown tables for course lists. For single facts (a credit total, an office location) answer in one or two sentences.
 - Keep answers concise and friendly.
 Chat History:
