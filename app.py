@@ -146,13 +146,18 @@ PERSIST_DIR    = os.path.join(BASE_DIR, "vectorstore")
 # =====================================================
 
 @st.cache_resource
+@st.cache_resource
 def load_curriculum() -> dict:
     """
-    Loads all curriculum JSON files.
+    Loads all curriculum JSON files, keyed by (level, semester, option).
+    Files with no specific option (e.g. 400_second_common.json) are also
+    registered under every option that exists at the same level, so a
+    lookup like (400, second, AI) finds the shared courses.
     """
     curriculum = {}
     if not os.path.exists(CURRICULUM_DIR):
         return curriculum
+
     for filename in os.listdir(CURRICULUM_DIR):
         if not filename.lower().endswith(".json"):
             continue
@@ -167,6 +172,24 @@ def load_curriculum() -> dict:
                 curriculum[(level, semester, option)] = data
         except Exception as e:
             st.warning(f"Could not load {filename}: {e}")
+
+    # --- Share "common" files across all options at the same level ---
+    COMMON_MARKERS = {None, "", "common", "all", "general"}
+
+    def is_common(opt):
+        return opt is None or str(opt).strip().lower() in COMMON_MARKERS
+
+    # Real options per level, taken from the data itself
+    options_by_level = {}
+    for (lvl, sem, opt) in list(curriculum.keys()):
+        if not is_common(opt):
+            options_by_level.setdefault(lvl, set()).add(opt)
+
+    for (lvl, sem, opt), data in list(curriculum.items()):
+        if is_common(opt):
+            for real_opt in options_by_level.get(lvl, []):
+                curriculum.setdefault((lvl, sem, real_opt), data)
+
     return curriculum
 
 
@@ -798,10 +821,12 @@ if question:
 Answer using ONLY the provided context. Be clear, helpful and direct.
 
 Guidelines:
-- Never make up information.
-- Use markdown tables for courses when possible.
-- If the answer is not in the context, politely say you don't have that information.
-
+- Never make up information. Use only facts that appear in the context.
+- Answer only what was asked. Do not add extra courses, offices, rooms or topics the user did not ask about.
+- If the answer is not in the context, say clearly that you don't have that information, then stop. Do not offer unrelated alternatives from the context. You may suggest one short way to rephrase, or tell them to contact the department office.
+- If the user asks about a specific course code, lecturer or room that does not appear in the context, say it is not in your records. Do not substitute a different one.
+- Use markdown tables for course lists. For single facts (a credit total, an office location) answer in one or two sentences.
+- Keep answers concise and friendly.
 Chat History:
 {history_text}
 
